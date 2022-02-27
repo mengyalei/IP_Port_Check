@@ -4,8 +4,8 @@ USERNAME="****"
 PASSWORD="****"
 HOSTNAME="127.0.0.1"
 PORT="3306"
-DBNAME="*****"
-TABLENAME="*****"
+DBNAME="sspanel"
+TABLENAME="ss_node"
 
 for line in `cat iplist.txt | grep -v ^# |grep -v ^$`
 do  
