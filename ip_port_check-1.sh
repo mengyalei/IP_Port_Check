@@ -22,14 +22,14 @@ do
 		
     else
 		
-		    newport=`expr $port + 1`
+	newport=`expr $port + 1`
         echo $(date +"%y-%m-%d %H:%M:%S") "$ip:$port Fail! " >> telnet_fail.txt
 		    echo "$ip|$newport|" >> telnet_checked.txt
 		
-		if [ "$ip" = "18.183.*.*" ]; then
-		update_sql="update ${TABLENAME} set server='****url.com;$newport;2;ws;;path=/hls/cctv5phd.m3u8|host=****url.com' where id =5"
-		/usr/local/mysql/bin/mysql -h${HOSTNAME} -P${PORT} -u${USERNAME} -p${PASSWORD} ${DBNAME} -e "${update_sql}"
-		fi			
+	if [ "$ip" = "18.183.*.*" ]; then
+	update_sql="update ${TABLENAME} set server='****url.com;$newport;2;ws;;path=/hls/cctv5phd.m3u8|host=****url.com' where id =5"
+	/usr/local/mysql/bin/mysql -h${HOSTNAME} -P${PORT} -u${USERNAME} -p${PASSWORD} ${DBNAME} -e "${update_sql}"
+	fi			
     fi
 done
 	mv  telnet_checked.txt  iplist.txt
