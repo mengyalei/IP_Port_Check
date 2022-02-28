@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source /etc/profile
+PATH=/usr/local/mysql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 USERNAME="****"
 PASSWORD="****"
 HOSTNAME="127.0.0.1"
