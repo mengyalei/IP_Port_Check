@@ -19,7 +19,7 @@ do
     result=`cat telnet_result.txt | grep -B 1 \] | grep [0-9] | awk '{print $3}' | cut -d '.' -f 1,2,3,4`
     echo "$result"
     if [ -n "$result" ]; then
-        echo "$result|$port|" >> telnet_checked.txt
+        echo "$ip|$port|" >> telnet_checked.txt
     else
 	newport=`expr $port + 1`
         echo $(date +"%y-%m-%d") "$ip:$port not pass! " >> telnet_fail.txt
